@@ -52,7 +52,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     suite('basic', function() {
       test('input is spaced out correctly', function() {
         var input = fixture('basic');
-        input.value='127000000001';
+        input.value='127.0.0.1';
         assert.equal(input.value, '127.0.0.1');
       });
 
@@ -64,7 +64,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         var container = Polymer.dom(input.root).querySelector('paper-input-container');
         assert.ok(container, 'paper-input-container exists');
         assert.isTrue(container.invalid);
-        assert.equal(input.cardType, '');
+        assert.equal(input.value, '');
 
         var error = Polymer.dom(input.root).querySelector('paper-input-error');
         assert.ok(error, 'paper-input-error exists');
@@ -73,13 +73,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       test('valid input is ok', function() {
         var input = fixture('required');
-        input.value='4000000000000002';
+        input.value='192.168.0.100';
         forceXIfStamp(input);
 
         var container = Polymer.dom(input.root).querySelector('paper-input-container');
         assert.ok(container, 'paper-input-container exists');
         assert.isFalse(container.invalid);
-        assert.equal(input.cardType, 'visa');
+        assert.equal(input.value, '192.168.0.100');
       });
 
       test('empty required input shows error on blur', function(done) {
