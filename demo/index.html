@@ -18,7 +18,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <title>gold-ip-input demo</title>
 
   <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="../gold-cc-input.html">
+  <link rel="import" href="../gold-ip-input.html">
   <link rel="import" href="../../paper-styles/demo-pages.html">
 
 </head>
@@ -26,21 +26,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <div class="vertical-section-container centered">
     <h4>Standard</h4>
     <div class="vertical-section">
-      <gold-cc-input></gold-cc-input>
-      <gold-cc-input auto-validate required label="Auto-validating"></gold-cc-input>
+      <gold-ip-input></gold-ip-input>
+      <gold-ip-input auto-validate required label="Auto-validating"></gold-ip-input>
     </div>
 
     <h4>Pre-validated</h4>
     <div class="vertical-section">
-      <gold-cc-input label="Visa" value="4000 0000 0000 0002" auto-validate></gold-cc-input>
-      <gold-cc-input label= "MasterCard" value="5100 0000 0000 0008" auto-validate></gold-cc-input>
-      <gold-cc-input label="Discover" value="6011 0000 0000 0004" auto-validate></gold-cc-input>
-      <gold-cc-input label="Invalid Discover Card" value="6011 0000 0000 1233" auto-validate></gold-cc-input>
+      <gold-ip-input label="Visa" value="4000 0000 0000 0002" auto-validate></gold-ip-input>
+      <gold-ip-input label= "MasterCard" value="5100 0000 0000 0008" auto-validate></gold-ip-input>
+      <gold-ip-input label="Discover" value="6011 0000 0000 0004" auto-validate></gold-ip-input>
+      <gold-ip-input label="Invalid Discover Card" value="6011 0000 0000 1233" auto-validate></gold-ip-input>
     </div>
 
     <h4>Custom error message, auto-validates on blur</h4>
     <div class="vertical-section">
-      <gold-cc-input auto-validate label="Cats only" error-message="needs more cats" required></gold-cc-input>
+      <gold-ip-input auto-validate label="Cats only" error-message="needs more cats" required></gold-ip-input>
     <div>
   </div>
 </body>
