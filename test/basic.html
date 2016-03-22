@@ -52,8 +52,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     suite('basic', function() {
       test('input is spaced out correctly', function() {
         var input = fixture('basic');
-        input.value='12345678';
-        assert.equal(input.value, '1234 5678');
+        input.value='127000000001';
+        assert.equal(input.value, '127.0.0.1');
       });
 
       test('invalid input is not ok', function() {
