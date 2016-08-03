@@ -193,7 +193,7 @@ style this element.
      */
     validate: function() {
       // Empty, non-required input is valid.
-      if (!this.required && this.value == '') {
+      if (!this.required && (this.value === null || this.value == '')) {
         return true;
       }
 
