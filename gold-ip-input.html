@@ -168,12 +168,24 @@ style this element.
           notDotCount = 0;
           dotCount++;
         }
-        if (dotCount < 3 || (dotCount === 3 && notDotCount < 4)) {
-          // Add a 0 between two dots.
-          if (value[i] === '.' && (i==0 || value[i-1] === '.')) formattedValue += '0';
-          // Add a dot after every 3 characters but the dot.
-          if (notDotCount === 4) formattedValue += '.';
+        if (dotCount < 3 && notDotCount === 1 && value[i] === '0') {
+          // add a dot after a single '0'
           formattedValue += value[i];
+          if (value.length > (i+1) && value[i+1] !== '.') formattedValue += '.';
+        }
+        else if (dotCount === 3 && notDotCount === 1 && value[i] === '0') {
+          // remove everything after last '.0'
+          formattedValue += value[i];
+          i = value.length;
+        }
+        else {
+          if (dotCount < 3 || (dotCount === 3 && notDotCount < 4)) {
+            // Add a 0 between two dots.
+            if (value[i] === '.' && (i==0 || value[i-1] === '.')) formattedValue += '0';
+            // Add a dot after every 3 characters but the dot.
+            if (notDotCount === 4) formattedValue += '.';
+            formattedValue += value[i];
+          }
         }
       }
       this.updateValueAndPreserveCaret(formattedValue);
